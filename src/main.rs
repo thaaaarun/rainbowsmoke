@@ -13,8 +13,9 @@ use create_image::create_image::CreateImage;
 use std::time::Instant;
 
 fn main() {
-    let width = 1170; // x
-    let height = 2532; // y
+    // PARAMETERS, ADJUST AS NEEDED
+    let width = 1170; // width of output
+    let height = 2532; // height of output
     let color_sample_size = 24000; // 1000x1000x5000 takes 7.5s, but with RTree, it only takes 3.5s
     let starting_points = vec![(0,width/2)];
     let input_image_path = "angryimg100100.png"; // this is currently 300x300
@@ -23,8 +24,8 @@ fn main() {
     let random_variation = 0.85;
     let shuffle_input_image = true;
 
-    // gotta serialize all these input parameters into 1 string
-    // so i can name the output image file
+
+    // @TODO: serialize parameters to automatically generate a unique output file name
 
     // initialize a color selection model
     let s1 = Instant::now();
